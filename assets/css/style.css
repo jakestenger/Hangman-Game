@@ -102,6 +102,13 @@ hr
 	margin-top: 10px;
 }
 
+#button
+{
+  background-color: hsl(0, 0%, 94%) !important;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ded8d8), to(#efefef));
+}
+
 #letter4
 {
 	text-decoration: none;

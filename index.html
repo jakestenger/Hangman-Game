@@ -23,9 +23,13 @@
 				<h1>Welcome to Hangman!</h1>
 				<h2>Please press a letter to start guessing</h2>
 			</div>
+			<div id="total-score-box" class="stats">
+				<hr>
+				<h3>You've won <span id="total-score">0</span> games so far!</h3>
+			</div>
 			<div id="guesses-remaining-box" class="stats">
 				<hr>
-				<h3>You have <span id="guesses-remaining">6</span> incorrect guesses left before you lose!</h3>
+				<h3>You have <span id="guesses-remaining">6</span> incorrect guesses left before you lose.</h3>
 			</div>
 			<div id="playboard">
 				<img src="assets/images/hm0.png">
@@ -53,6 +57,7 @@
 				<p class="wrong-letter" id="wrong-letter5">&nbsp</p>
 				<p class="wrong-letter" id="wrong-letter6">&nbsp</p>
 			</div>
+			<div id="button" class="btn btn-default" onclick="reset()">Let Me Try Again</div>
 		</div>
 	</div>
 </body>

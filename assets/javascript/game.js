@@ -2,17 +2,36 @@ var guesses = 0;
 var bad_guesses = [];
 var good_guesses = [];
 var keep_listening = true;
+var total_score = 0;
 var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var letters = {
 	letter0: "s",
 	letter1: "t",
 	letter2: "a",
 	letter3: "r",
+	letter4: " ",
 	letter5: "t",
 	letter6: "r",
 	letter7: "e",
 	letter8: "k"
 };
+
+function reset() {
+	for (var i = 0; i < bad_guesses.length; i++) {
+		document.getElementById("wrong-letter" + (i + 1)).innerHTML = "";
+	}
+	for (var key in letters) {
+		document.getElementById(key).innerHTML = "&nbsp";
+	}
+	keep_listening = true;
+	guesses = 0;
+	bad_guesses = [];
+	good_guesses = [];
+	keep_listening = true;
+	document.getElementById("bad-guess-counter").innerHTML = "";
+	document.getElementById("guesses-remaining").innerHTML = " " + 6 + " ";
+	document.getElementById("playboard").innerHTML = '<img src="assets/images/hm0.png">'
+}
 
 
 document.onkeyup = function(event) {
@@ -60,8 +79,10 @@ document.onkeyup = function(event) {
 				}
 				if (good_guesses.length === 8) {
 					keep_listening = false;
+					total_score++;
 					document.getElementById("playboard").style.height = "320px";
 					document.getElementById("playboard").innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/RfnaxhJY4Yc?autoplay=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
+					document.getElementById("total-score").innerHTML = total_score;
 				}
 			}
 			if (!match) {
