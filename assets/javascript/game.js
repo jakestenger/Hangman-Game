@@ -20,14 +20,12 @@ document.onkeyup = function(event) {
 	function alreadyGuessed(userGuess) {
 		for (var i = 0; i < bad_guesses.length; i++) {
 			if (userGuess === bad_guesses[i]) {
-				console.log(userGuess + " found in bad_guesses array");
 				return true;
 			}
 		}
 
 		for (var i = 0; i < good_guesses.length; i++) {
 			if (userGuess === good_guesses[i]) {
-				console.log(userGuess + " found in good_guesses array");
 				return true;
 			}
 		}
@@ -37,10 +35,7 @@ document.onkeyup = function(event) {
 	function inAlphabet(userGuess) {
 		for (var i = 0; i < alphabet.length; i++) {
 			if (userGuess === alphabet[i]) {
-				console.log(userGuess + " found in alphabet");
 				return true;
-			} else {
-				console.log(userGuess + " is not " + alphabet[i]);
 			}
 		}
 		return false;
@@ -58,9 +53,7 @@ document.onkeyup = function(event) {
 			guesses++
 			var match = false;
 			for (var key in letters) {
-				console.log("We are checking to see if " + userGuess + " is " + letters[key]);
 				if (userGuess === letters[key]) {
-					console.log("it is!");
 					document.getElementById(key).innerHTML = userGuess;
 					good_guesses.push(userGuess);
 					match = true;
