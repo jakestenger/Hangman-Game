@@ -28,9 +28,13 @@ function reset() {
 	bad_guesses = [];
 	good_guesses = [];
 	keep_listening = true;
+	document.getElementById("guesses-remaining-box").innerHTML = "<hr><h3>You have <span id=\"guesses-remaining\">6</span> incorrect guesses left before you lose.</h3>";
+	document.getElementById("guesses-remaining-box").style.height = "";
 	document.getElementById("bad-guess-counter").innerHTML = "";
 	document.getElementById("guesses-remaining").innerHTML = " " + 6 + " ";
 	document.getElementById("playboard").innerHTML = '<img src="assets/images/hm0.png">'
+	document.getElementById("playboard").style.marginTop = "180px";
+	document.getElementById("playboard").style.height = "";
 }
 
 
@@ -80,7 +84,10 @@ document.onkeyup = function(event) {
 				if (good_guesses.length === 8) {
 					keep_listening = false;
 					total_score++;
+					document.getElementById("guesses-remaining-box").innerHTML = "";
+					document.getElementById("guesses-remaining-box").style.height = "0px";
 					document.getElementById("playboard").style.height = "320px";
+					document.getElementById("playboard").style.marginTop = "120px";
 					document.getElementById("playboard").innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/RfnaxhJY4Yc?autoplay=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
 					document.getElementById("total-score").innerHTML = total_score;
 				}
