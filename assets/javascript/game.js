@@ -103,6 +103,7 @@ document.onkeyup = function(event) {
 					document.getElementById("playboard").style.marginTop = "120px";
 					document.getElementById("playboard").innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/RfnaxhJY4Yc?autoplay=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
 					document.getElementById("total-score").innerHTML = total_score;
+					break;
 				}
 			}
 			if (!match) {
