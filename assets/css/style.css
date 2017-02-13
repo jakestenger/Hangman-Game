@@ -112,3 +112,8 @@ hr
   background-repeat: repeat-x;
   background-image: -khtml-gradient(linear, left top, left bottom, from(#ded8d8), to(#efefef));
 }
+
+#preload
+{ 
+	display: none;
+}
