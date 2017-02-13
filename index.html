@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Hangman</title>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Coming+Soon|Shadows+Into+Light|Waiting+for+the+Sunrise" rel="stylesheet">
+
+	<!-- My custom stylesheet -->
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<div id="main">
+		<div id="writeable-space">
+			<div>
+				<h1>Welcome to Hangman!</h1>
+				<h2>Please press a letter to start guessing</h2>
+			</div>
+			<div id="guesses-remaining-box" class="stats">
+				<hr>
+				<h3>You have <span id="guesses-remaining">6</span> incorrect guesses left!</h3>
+			</div>
+			<div id="playboard">
+				<img src="assets/images/hm0.png">
+			</div>
+			<div id="the-word">
+				<p class="letter" id="letter0">&nbsp</p>
+				<p class="letter" id="letter1">&nbsp</p>
+				<p class="letter" id="letter2">&nbsp</p>
+				<p class="letter" id="letter3">&nbsp</p>
+				<p class="letter" id="letter4">&nbsp</p>
+				<p class="letter" id="letter5">&nbsp</p>
+				<p class="letter" id="letter6">&nbsp</p>
+				<p class="letter" id="letter7">&nbsp</p>
+				<p class="letter" id="letter8">&nbsp</p>
+			</div>
+			<hr>
+			<div id="bad-guess-box" class="stats">
+				<h3 id="bad-guess-counter"></h3>
+			</div>
+			<div id="wrong-letter-box" class="stats">
+				<p class="wrong-letter" id="wrong-letter1">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter2">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter3">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter4">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter5">&nbsp</p>
+				<p class="wrong-letter" id="wrong-letter6">&nbsp</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

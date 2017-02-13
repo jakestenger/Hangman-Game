@@ -1,0 +1,109 @@
+html, body
+{
+	background-image: url("../images/desktop.jpg");
+	background-color: lightblue;
+}
+
+h1, h2, h3, p
+{
+	font-family: 'Annie Use Your Telescope','Coming Soon', sans-serif;
+	color: #535456;
+}
+
+hr
+{
+	width: 50%;
+	float: center;
+	border-top: 4px double #535456;
+}
+
+.letter 
+{
+	float: left;
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 30px;
+	margin: 0 10px;
+}
+
+.wrong-letter 
+{
+	float: left;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 30px;
+	margin: 0 10px;
+}
+
+.stats
+{
+	float: left;
+	width: 100%;
+	height: 65px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	line-height: 65px;
+}
+
+#main
+{
+	overflow: none;
+	background: url("../images/notebook-paper.png");
+	width: 846px;
+	height: 1100px;
+	margin: 0px auto;
+}
+
+#writeable-space
+{
+	float: left;
+	width: 79.5%;
+	margin-top: 13%;
+	margin-left: 20%;
+	text-align: center;
+}
+
+#game{
+	float: left;
+	width: 60%;
+	margin-top: 5%;
+	margin-left: 20%;
+}
+
+#playboard
+{
+	overflow: auto;
+	margin-top: 100px;
+	width: 100%;
+	height: 270px;
+}
+
+#wrong-letter-box
+{
+	width: 50%;
+	float: right;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+#the-word
+{
+	display: inline-block;
+	margin-top: 30px;
+}
+
+#bad-guess-box
+{
+	width: 50%;
+	float: left;
+	padding-right: 10px;
+	text-align: right;
+	margin-top: 10px;
+}
+
+#letter4
+{
+	text-decoration: none;
+}
