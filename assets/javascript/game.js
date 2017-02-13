@@ -4,37 +4,50 @@ var good_guesses = [];
 var keep_listening = true;
 var total_score = 0;
 var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-var letters = {
-	letter0: "s",
-	letter1: "t",
-	letter2: "a",
-	letter3: "r",
-	letter4: " ",
-	letter5: "t",
-	letter6: "r",
-	letter7: "e",
-	letter8: "k"
-};
+var words = ["star trek", "enterprise", "picard", "starfleet", "federation of planets", "fully functional"];
+var word = words[Math.floor((Math.random() * words.length))];
+var letters = [];
+var number_of_spaces = 0;
+
+
+function wordSetup(word) {
+	var string = "";
+	for (var i = 0; i < word.length; i++) {
+		if (word.charAt(i) === " ") {
+			string += '<p class="letter no-underscore" id="letter' + i + '">&nbsp</p>'
+			number_of_spaces++;
+		} else {
+			string += '<p class="letter" id="letter' + i + '">&nbsp</p>';
+		}
+		letters.push(word.charAt(i));
+	}
+	document.getElementById("word").innerHTML = string;
+}
 
 function reset() {
 	for (var i = 0; i < bad_guesses.length; i++) {
 		document.getElementById("wrong-letter" + (i + 1)).innerHTML = "";
 	}
-	for (var key in letters) {
-		document.getElementById(key).innerHTML = "&nbsp";
+	for (var i = 0; i < letters.length; i++) {
+		document.getElementById("word").innerHTML = "&nbsp";
 	}
+	letters = [];
 	keep_listening = true;
 	guesses = 0;
 	bad_guesses = [];
 	good_guesses = [];
 	keep_listening = true;
+	number_of_spaces = 0;
 	document.getElementById("guesses-remaining-box").innerHTML = "<hr><h3>You have <span id=\"guesses-remaining\">6</span> incorrect guesses left before you lose.</h3>";
 	document.getElementById("guesses-remaining-box").style.height = "";
 	document.getElementById("bad-guess-counter").innerHTML = "";
 	document.getElementById("guesses-remaining").innerHTML = " " + 6 + " ";
-	document.getElementById("playboard").innerHTML = '<img src="assets/images/hm0.png">'
+	document.getElementById("playboard").innerHTML = '<img src="assets/images/hm0.png">';
 	document.getElementById("playboard").style.marginTop = "180px";
 	document.getElementById("playboard").style.height = "";
+	document.getElementById("word").innerHTML = "";
+	var word = words[Math.floor((Math.random() * words.length))];
+	wordSetup(word)
 }
 
 
@@ -75,13 +88,13 @@ document.onkeyup = function(event) {
 		} else {
 			guesses++
 			var match = false;
-			for (var key in letters) {
-				if (userGuess === letters[key]) {
-					document.getElementById(key).innerHTML = userGuess;
+			for (var i = 0; i < letters.length; i++) {
+				if (userGuess === letters[i]) {
+					document.getElementById("letter" + i).innerHTML = userGuess;
 					good_guesses.push(userGuess);
 					match = true;
 				}
-				if (good_guesses.length === 8) {
+				if (good_guesses.length === (letters.length - number_of_spaces)) {
 					keep_listening = false;
 					total_score++;
 					document.getElementById("guesses-remaining-box").innerHTML = "";
@@ -114,3 +127,5 @@ document.onkeyup = function(event) {
 		checkLetter(event.key.toLowerCase());
 	};
 }
+
+wordSetup(word);

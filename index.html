@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hangman</title>
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -34,17 +33,7 @@
 			<div id="playboard">
 				<img src="assets/images/hm0.png">
 			</div>
-			<div id="the-word">
-				<p class="letter" id="letter0">&nbsp</p>
-				<p class="letter" id="letter1">&nbsp</p>
-				<p class="letter" id="letter2">&nbsp</p>
-				<p class="letter" id="letter3">&nbsp</p>
-				<p class="letter" id="letter4">&nbsp</p>
-				<p class="letter" id="letter5">&nbsp</p>
-				<p class="letter" id="letter6">&nbsp</p>
-				<p class="letter" id="letter7">&nbsp</p>
-				<p class="letter" id="letter8">&nbsp</p>
-			</div>
+			<div id="word"></div>
 			<hr>
 			<div id="bad-guess-box" class="stats">
 				<h3 id="bad-guess-counter"></h3>
@@ -61,4 +50,5 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </html>
